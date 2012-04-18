@@ -1,0 +1,32 @@
+--- origsrc/mate-panel-1.2.1/libmate-panel-applet/Makefile.am	2012-03-11 15:23:37.000000000 -0500
++++ src/mate-panel-1.2.1/libmate-panel-applet/Makefile.am	2012-04-16 23:23:34.223284600 -0500
+@@ -118,7 +118,7 @@ built_introspection_sources =	\
+ 
+ MatePanelApplet-3.0.gir: libmate-panel-applet-3.la
+ MatePanelApplet_3_0_gir_INCLUDES = GObject-2.0 Gtk-2.0 MateConf-2.0
+-MatePanelApplet_3_0_gir_CFLAGS = $(AM_CPPFLAGS)
++MatePanelApplet_3_0_gir_CFLAGS = $(AM_CPPFLAGS) -I$(srcdir)
+ MatePanelApplet_3_0_gir_LIBS = libmate-panel-applet-3.la
+ MatePanelApplet_3_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources)) $(addprefix $(builddir)/,$(built_introspection_sources))
+ # When requiring gobject-introspection 0.9.5, use this:
+--- origsrc/mate-panel-1.2.1/matecomponent/panel-module/Makefile.am	2012-03-11 15:23:37.000000000 -0500
++++ src/mate-panel-1.2.1/matecomponent/panel-module/Makefile.am	2012-04-17 00:13:11.409569900 -0500
+@@ -17,6 +17,7 @@ libmate_panel_applets_matecomponent_la_C
+ 	-DDATADIR=\""$(datadir)"\"
+ 
+ libmate_panel_applets_matecomponent_la_LDFLAGS =				\
++	-Wl,$(top_builddir)/mate-panel/libmate-panel.a		\
+ 	-export_dynamic -avoid-version -module -no-undefined	\
+ 	-export-symbols-regex '^g_io_module_(load|unload|query)'
+ 
+--- origsrc/mate-panel-1.2.1/mate-panel/Makefile.am	2012-03-11 15:23:37.000000000 -0500
++++ src/mate-panel-1.2.1/mate-panel/Makefile.am	2012-04-17 00:13:21.551150000 -0500
+@@ -139,7 +139,7 @@ mate_panel_LDADD = \
+ 	$(X_LIBS) \
+ 	-lm
+ 
+-mate_panel_LDFLAGS = -export-dynamic
++mate_panel_LDFLAGS = -export-dynamic -Wl,--out-implib,libmate-panel.a
+ 
+ mate_desktop_item_edit_SOURCES = \
+ 	mate-desktop-item-edit.c \
