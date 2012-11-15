@@ -1,5 +1,0 @@
-category: MATE
-requires: libatk1.0_0 libcairo2 libcanberra0 libcanberra-gtk0 libdbus-glib_1_2 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libICE6 libintl8 libmatecomponent2_0 libmatecomponentui2_0 libmateconf2_4 libMateCORBA2_0 libmate-desktop2_17 libmate-menu2 libmateweather1 libpango1.0_0 librsvg2_2 libSM6 libwnck1_22 libX11_6 libXrandr2 mate-conf mate-menu-editor girepository-Gtk2.0 girepository-MateConf2.0
-sdesc: "MATE desktop panel"
-ldesc: "MATE is a fork of the GNOME 2 desktop. It provides an intuitive
-and attractive desktop to Linux users using traditional metaphors."
