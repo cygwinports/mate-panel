@@ -1,18 +1,19 @@
 inherit mate
 
 NAME="mate-panel"
-VERSION=1.4.0
+VERSION=1.6.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop panel"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
-REQUIRES="mate-conf mate-menu-editor"
+REQUIRES="mate-menu-editor"
 
-PATCH_URI="1.2.1-no-undefined.patch"
+PATCH_URI="1.6.0-gtk-doc.patch
+           1.6.0-vpath.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 mate_panel_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/gir* usr/lib/mate-panel/ usr/share/"
 mate_panel_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 
-CYGCONF_ARGS="--libexecdir=/usr/lib/${PN} --disable-matecomponent"
+CYGCONF_ARGS="--libexecdir=/usr/lib/${PN}"

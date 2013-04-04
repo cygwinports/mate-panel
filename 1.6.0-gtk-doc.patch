@@ -1,0 +1,11 @@
+--- origsrc/mate-panel-1.6.0/doc/reference/mate-panel-applet/Makefile.am	2013-03-31 16:36:43.000000000 -0500
++++ src/mate-panel-1.6.0/doc/reference/mate-panel-applet/Makefile.am	2013-04-04 02:50:11.906855600 -0500
+@@ -55,7 +55,7 @@ GTKDOC_CFLAGS =					\
+ GTKDOC_LIBS =						\
+ 	$(LDFLAGS)					\
+ 	$(PANEL_LIBS)					\
+-	../../../libmate-panel-applet/libmate-panel-applet-3.la
++	../../../libmate-panel-applet/libmate-panel-applet-4.la
+ 
+ include $(top_srcdir)/gtk-doc.make
+ 
