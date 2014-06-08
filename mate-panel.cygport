@@ -2,7 +2,7 @@ inherit mate
 
 NAME="mate-panel"
 VERSION=1.8.0
-RELEASE=1
+RELEASE=2
 CATEGORY="MATE"
 SUMMARY="MATE desktop panel"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
@@ -12,3 +12,6 @@ PKG_NAMES="${NAME} ${NAME}-devel"
 mate_panel_REQUIRES="mozo"
 mate_panel_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/gir* usr/libexec/ usr/share/"
 mate_panel_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+
+# avoid collisions with gnome-panel applets
+CYGCONF_ARGS="--libexecdir=/usr/libexec/mate-panel"
