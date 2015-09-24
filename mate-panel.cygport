@@ -1,14 +1,12 @@
 inherit mate
 
 NAME="mate-panel"
-VERSION=1.8.1
+VERSION=1.10.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop panel"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
-
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/mate-panel.git/plain/mate-panel_container-child-background.patch?h=f20"
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 mate_panel_REQUIRES="mozo tzcode"
