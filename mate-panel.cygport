@@ -1,12 +1,14 @@
 inherit mate
 
 NAME="mate-panel"
-VERSION=1.18.4
+VERSION=1.20.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop panel"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
+
+PATCH_URI="1.20.1-dllexport.patch"
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 mate_panel_REQUIRES="mozo tzdata"
